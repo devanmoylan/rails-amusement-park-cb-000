@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
 
 
-  get 'sessions/new'
+  get 'welcome/home'
 
-  get 'sessions/create'
+  get '/sign_in' => 'sessions#new'
 
-  get 'sessions/destroy'
+  post '/sign_in' => 'sessions#create'
+
+  post '/sign_out' => 'sessions#destroy'
+
+  root 'welcome#home'
 
 end
