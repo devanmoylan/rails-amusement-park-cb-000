@@ -28,6 +28,10 @@ class UsersController < ApplicationController
 
   private
 
+  def make_happy(user)
+    binding.pry
+  end
+
   def set_user
     @user = User.find(params[:id])
   end
