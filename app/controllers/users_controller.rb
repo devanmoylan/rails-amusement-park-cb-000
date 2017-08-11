@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update]
+  before_action :set_user, only: [:show, :edit, :update, :make_happy]
 
   def new
     @user = User.new
@@ -26,11 +26,14 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
+  def make_happy
+    @user.increase_ticket_count
+    binding.pry
+    redirect_to user_path(@user)
+  end
+
   private
 
-  def make_happy(user)
-    binding.pry
-  end
 
   def set_user
     @user = User.find(params[:id])

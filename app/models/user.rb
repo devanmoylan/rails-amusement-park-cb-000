@@ -4,6 +4,11 @@ class User < ActiveRecord::Base
 
   has_secure_password
 
+
+  def increase_ticket_count
+    self.tickets += 1
+  end
+
   def mood
     if nausea > happiness
       'sad'
@@ -13,4 +18,5 @@ class User < ActiveRecord::Base
       'No mood'
     end
   end
+
 end
