@@ -4,9 +4,9 @@ Rails.application.routes.draw do
 
   get 'welcome/home'
 
-  get '/sign_in' => 'sessions#new'
+  get '/signin' => 'sessions#new'
 
-  post '/sign_in' => 'sessions#create'
+  post '/signin' => 'sessions#create'
 
   post '/sign_out' => 'sessions#destroy'
 
