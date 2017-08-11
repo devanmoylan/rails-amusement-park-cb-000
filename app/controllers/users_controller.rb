@@ -27,8 +27,8 @@ class UsersController < ApplicationController
   end
 
   def make_happy
-    @user.increase_ticket_count
-    binding.pry
+    @user.decrease_ticket_count(params[:format].to_i)
+    @user.save
     redirect_to user_path(@user)
   end
 

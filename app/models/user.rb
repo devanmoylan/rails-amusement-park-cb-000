@@ -5,8 +5,8 @@ class User < ActiveRecord::Base
   has_secure_password
 
 
-  def increase_ticket_count
-    self.tickets += 1
+  def decrease_ticket_count(ammount)
+    self.tickets -= ammount
   end
 
   def mood
