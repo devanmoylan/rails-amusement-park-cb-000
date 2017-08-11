@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  get 'attractions/show'
+
+  get 'attractions/index'
+
+  get 'attractions/edit'
+
+  get 'attractions/new'
+
   resources :users
 
   get 'welcome/home'
