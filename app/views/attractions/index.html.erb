@@ -1,4 +1,4 @@
 <h1>Attractions#index</h1>
 <% @attractions.each do |attraction| %>
-  <%= attraction.name %>
+    <p>Go on <%= link_to attraction.name, attraction_path(attraction) %></p>
 <% end %>
