@@ -8,9 +8,10 @@ Rails.application.routes.draw do
 
   post '/signin' => 'sessions#create'
 
-  post '/sign_out' => 'sessions#destroy'
+  post '/sign_out' => 'sessions#destroy', as: 'signout'
 
   root 'welcome#home'
+
 
 end
 
