@@ -1,13 +1,6 @@
 Rails.application.routes.draw do
 
-
-  get 'users/new'
-
-  get 'users/show'
-
-  get 'users/edit'
-
-  get 'users/index'
+  resources :users
 
   get 'welcome/home'
 
@@ -21,4 +14,3 @@ Rails.application.routes.draw do
 
 end
 
-User.create(name: "pat", password: "password", password_confirmation: "password", nausea: 1, happiness: 5, tickets: 5, height: 45, admin: true)
