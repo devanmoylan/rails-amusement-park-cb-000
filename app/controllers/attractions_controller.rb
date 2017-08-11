@@ -3,6 +3,7 @@ class AttractionsController < ApplicationController
   end
 
   def index
+    @attractions = Attraction.all
   end
 
   def edit
@@ -10,4 +11,5 @@ class AttractionsController < ApplicationController
 
   def new
   end
+
 end
