@@ -19,6 +19,6 @@ class SessionsController < ApplicationController
   end
 end
 
-## Next: Generate controller for Users -- need show.
+
 
 
