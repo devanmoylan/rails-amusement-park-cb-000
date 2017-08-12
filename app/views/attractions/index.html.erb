@@ -2,3 +2,5 @@
 <% @attractions.each do |attraction| %>
     <p><%= link_to "Go on #{attraction.name}", attraction_path(attraction) %></p>
 <% end %>
+
+<%= link_to "New Attraction", new_attraction_path if current_user.admin? %>
