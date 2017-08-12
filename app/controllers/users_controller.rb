@@ -28,11 +28,13 @@ class UsersController < ApplicationController
 
   def go_on_ride
     @attraction = Attraction.find(params[:format])
-    if @user.eligible_to_ride?(@attraction)
+    if @user.eligible_to_ride?(@attraction) == true
       @user.decrease_ticket_count(@attraction.tickets)
       @user.update_mood
       @user.save
       redirect_to user_path(@user), notice: "Thanks for riding the #{@attraction.name}!"
+    else
+      redirect_to user_path(@user), notice: "#{@user.eligible_to_ride?(@attraction)}"
     end
   end
 

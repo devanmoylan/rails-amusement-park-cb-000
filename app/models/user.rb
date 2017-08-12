@@ -10,7 +10,14 @@ class User < ActiveRecord::Base
   end
 
   def eligible_to_ride?(attraction)
-    true if (self.tickets >= attraction.tickets) && (self.height >= attraction.min_height)
+    return true if (self.tickets >= attraction.tickets) && (self.height >= attraction.min_height)
+    if (self.height < attraction.min_height) && (self.tickets < attraction.tickets)
+      "You are not tall enough to ride the #{attraction.name}. You do not have enough tickets to ride the #{attraction.name}. Tickets: #{self.tickets}"
+    elsif (self.height < attraction.min_height)
+      "You are not tall enough to ride the #{attraction.name}"
+    else
+      "You do not have enough tickets to ride the #{attraction.name}."
+    end
   end
 
   def mood
