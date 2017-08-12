@@ -9,6 +9,11 @@ class User < ActiveRecord::Base
     self.tickets -= ammount
   end
 
+  def update_mood
+    self.nausea = 5
+    self.happiness = 0
+  end
+
   def mood
     if nausea > happiness
       'sad'

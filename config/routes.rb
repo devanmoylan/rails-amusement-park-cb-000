@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   root 'welcome#home'
 
-  post '/users/:id' => 'users#make_happy', as: 'make_happy'
+  post '/users/:id' => 'users#go_on_ride', as: 'go_on_ride'
 
 
 end
