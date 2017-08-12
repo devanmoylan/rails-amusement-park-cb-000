@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'rides/take_ride'
+
   resources :users, :attractions
 
   get 'welcome/home'
