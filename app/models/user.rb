@@ -9,9 +9,8 @@ class User < ActiveRecord::Base
     self.tickets -= ammount
   end
 
-  def update_mood
-    self.nausea = 5
-    self.happiness = 0
+  def eligible_to_ride?(attraction)
+    true if (self.tickets >= attraction.tickets) && (self.height >= attraction.min_height)
   end
 
   def mood
@@ -22,6 +21,11 @@ class User < ActiveRecord::Base
     else
       'No mood'
     end
+  end
+
+  def update_mood
+    self.nausea = 5
+    self.happiness = 0
   end
 
 end
