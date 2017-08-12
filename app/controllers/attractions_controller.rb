@@ -12,6 +12,10 @@ class AttractionsController < ApplicationController
   def edit
   end
 
+  def update
+    binding.pry
+  end
+
   def new
     @attraction = Attraction.new
   end

@@ -2,5 +2,7 @@
 <p>Find me in app/views/attractions/show.html.erb</p>
 <%= @attraction.name %>
 <% unless current_user.nil? %>
-    <%= button_to 'Go on this ride', go_on_ride_path(current_user, @attraction) %>
+    <%= button_to 'Go on this ride', go_on_ride_path(current_user, @attraction) unless current_user.admin? %>
 <% end %>
+
+<%= link_to "Edit Attraction", edit_attraction_path(@attraction) if current_user.admin? %>
